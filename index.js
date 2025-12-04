@@ -29,12 +29,16 @@ app.use(cors());
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads'))); 
 
 // Mount routers
+
 app.use('/api/v1/courses', courseRoutes); 
 app.use('/api/v1/mentors', mentorRoutes); 
 // 2. MOUNT AUTHENTICATION ROUTES
 // We'll use '/api/auth' for cleaner endpoint structure (e.g., /api/auth/signup)
 app.use('/api/auth', authRoutes); 
 
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
 
 const PORT = process.env.PORT || 8000;
 
