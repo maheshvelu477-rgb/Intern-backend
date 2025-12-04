@@ -40,6 +40,17 @@ app.get("/", (req, res) => {
   res.send("Backend is running!");
 });
 
+app.get("/test-db", async (req, res) => {
+  try {
+    const Course = require('./models/Course');
+    const courses = await Course.find();
+    res.status(200).json({ success: true, count: courses.length, data: courses });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+
 const PORT = process.env.PORT || 8000;
 
 const server = app.listen(
