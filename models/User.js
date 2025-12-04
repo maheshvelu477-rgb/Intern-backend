@@ -41,5 +41,5 @@ const userSchema = mongoose.Schema({
 
 
 // Export the model so it can be used in your controllers/routes
-const User = mongoose.model('users', userSchema);
+const User = mongoose.model('User', userSchema);
 module.exports = User;
