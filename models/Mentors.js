@@ -34,4 +34,4 @@ const MentorSchema = new mongoose.Schema({
 });
 
 // Export the model, which will be named 'Mentor' in MongoDB
-module.exports = mongoose.model('Mentor', MentorSchema);
+module.exports = mongoose.model('mentors', MentorSchema);
